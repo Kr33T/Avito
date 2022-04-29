@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BulletinBoard">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        app:layout_constraintBottom_toTopOf="@id/sCategory"
+        app:layout_constraintEnd_toStartOf="@id/tvPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        app:layout_constraintBottom_toTopOf="@id/sCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sCategory"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toTopOf="@id/btnBuy"
+        />
+
+    <Button
+        android:id="@+id/btnBuy"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSort"
+        app:layout_constraintTop_toBottomOf="@id/sCategory"
+        app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/btnSort"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@id/btnBuy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sCategory"
+        app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
+        android:text="Sort" />
+
+    <TableLayout
+        android:id="@+id/tlAnnouncements"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBuy">
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
