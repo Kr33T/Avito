@@ -145,7 +145,7 @@ public class BulletinBoard extends AppCompatActivity implements View.OnClickList
                             contentValues.put(DBHelper.KEY_ID2, realID);
                             contentValues.put(DBHelper.KEY_TITLE, cursorUpdater.getString(titleIndex));
                             contentValues.put(DBHelper.KEY_PRICE, cursorUpdater.getString(priceIndex));
-                            contentValues.put(DBHelper.KEY_CATEGORYID, cursorUpdater.getString(catIndex));
+                            contentValues.put(DBHelper.KEY_CATEGORYID, MainActivity.ctg[cursorUpdater.getInt(catIndex)]);
                             contentValues.put(DBHelper.KEY_USERNAME, cursorUpdater.getString(userNameIndex));
                             database.replace(DBHelper.TABLE_ANNOUNCEMENTS, null, contentValues);
                         }
