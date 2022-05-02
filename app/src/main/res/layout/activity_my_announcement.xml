@@ -10,7 +10,7 @@
         android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Мои объявления"
+        android:text="@string/strMyAnnouncements"
         android:textSize="25dp"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_marginBottom="13dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Название"
+        android:hint="@string/strNazvanie"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toStartOf="@id/etPrice"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:layout_marginTop="13dp"
         android:layout_marginBottom="13dp"
         android:inputType="number"
-        android:hint="Цена"
+        android:hint="@string/strPrice"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/etTitle"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sCategory"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="Добавить объявление" />
+        android:text="@string/strAddAnnouncement" />
 
     <TableLayout
         android:id="@+id/tlAnnouncements"

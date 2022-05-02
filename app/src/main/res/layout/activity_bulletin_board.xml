@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toStartOf="@id/btnSort"
         app:layout_constraintTop_toBottomOf="@id/sCategory"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="Оплатить" />
+        android:text="@string/strBuy" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sCategory"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="Сортировать" />
+        android:text="@string/strSort" />
 
     <TableLayout
         android:id="@+id/tlAnnouncements"

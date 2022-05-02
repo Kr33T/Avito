@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Avito</string>
+    <string name="strUsers">Пользователи</string>
+    <string name="strToMain">На главную</string>
+    <string name="strLogin">Логин</string>
+    <string name="strPassword">Пароль</string>
+    <string name="strName">Имя</string>
+    <string name="strAddNewUser">Добавить пользователя</string>
+    <string name="strChangeUser">Изменить данные пользователя</string>
+    <string name="strDeleteUser">Удалить пользователя</string>
+    <string name="strAnnouncementsAdmin">Объявления</string>
+    <string name="strBuy">Оплатить</string>
+    <string name="strSort">Сортировать</string>
+    <string name="strVhod">Вход</string>
+    <string name="strEnter">Войти</string>
+    <string name="strRegister">Регистрация</string>
+    <string name="strMissingUser"><![CDATA[Здравствуйте, </>!]]></string>
+    <string name="strMyAnnouncements">Мои объявления</string>
+    <string name="strBulletinBoard">Доска объявлений</string>
+    <string name="strProfile">Профиль</string>
+    <string name="strNazvanie">Название</string>
+    <string name="strPrice">Цена</string>
+    <string name="strAddAnnouncement">Добавить объявление</string>
+    <string name="strChangingUserData">Изменение данных входа</string>
+    <string name="strBtnChangeUserData">Изменить данные</string>
+    <string name="strBtnRegister">Зарегистрироваться</string>
 </resources>
