@@ -1,5 +1,6 @@
 package com.example.avito;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -34,14 +35,15 @@ public class DBHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("create table " + TABLE_USERS + "(" + KEY_ID1 + " integer primary key,"
+        db.execSQL("create table " + TABLE_USERS + "(" + KEY_ID1 + " integer primary key autoincrement,"
                 + KEY_LOGIN + " text," + KEY_PASSWORD + " text," + KEY_NAME + " text)");
 
-        db.execSQL("create table " + TABLE_ANNOUNCEMENTS + "(" + KEY_ID2 + " integer primary key," + KEY_TITLE + " text,"
+        db.execSQL("create table " + TABLE_ANNOUNCEMENTS + "(" + KEY_ID2 + " integer primary key autoincrement," + KEY_TITLE + " text,"
                 + KEY_PRICE + " integer," + KEY_CATEGORYID + " integer,"+ KEY_USERID + " integer," + KEY_USERNAME + " text," + " foreign key(" + KEY_USERID + ") references "
                 + TABLE_USERS + "(" + KEY_ID1 + ")," + " foreign key(" + KEY_CATEGORYID + ") references " + TABLE_CATEGORIES + "(" + KEY_ID3 + "))");
 
         db.execSQL("create table " + TABLE_CATEGORIES + "(" + KEY_ID3 + " integer primary key autoincrement," + KEY_CATEGORY + " text)");
+
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){

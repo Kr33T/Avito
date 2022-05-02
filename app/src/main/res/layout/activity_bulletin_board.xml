@@ -7,24 +7,41 @@
     tools:context=".BulletinBoard">
 
     <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Доска объявлений"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvTitle"
+        />
+
+    <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toStartOf="@id/tvPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
 
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvTitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
 
     <Spinner
         android:id="@+id/sCategory"
@@ -37,25 +54,39 @@
         app:layout_constraintBottom_toTopOf="@id/btnBuy"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:textSize="21dp"
+        android:textColor="@color/white"
         android:id="@+id/btnBuy"
         android:layout_width="0dp"
+        android:textAllCaps="false"
         android:layout_height="50dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnSort"
         app:layout_constraintTop_toBottomOf="@id/sCategory"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="Buy" />
+        android:text="Оплатить" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:textSize="21dp"
+        android:textColor="@color/white"
         android:id="@+id/btnSort"
         android:layout_width="0dp"
+        android:textAllCaps="false"
         android:layout_height="50dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintStart_toEndOf="@id/btnBuy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sCategory"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="Sort" />
+        android:text="Сортировать" />
 
     <TableLayout
         android:id="@+id/tlAnnouncements"

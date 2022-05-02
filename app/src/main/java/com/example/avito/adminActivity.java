@@ -15,9 +15,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class adminActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnRefresh, btnBack;
+    Button btnToMain, btnTransition;
 
     DBHelper dbHelper;
     SQLiteDatabase database;
@@ -27,10 +29,12 @@ public class adminActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        btnRefresh = findViewById(R.id.btnRefresh);
-        btnRefresh.setOnClickListener(this);
-        btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(this);
+        getSupportActionBar().hide();
+
+        btnToMain = findViewById(R.id.btnToMain);
+        btnToMain.setOnClickListener(this);
+        btnTransition = findViewById(R.id.Transition);
+        btnTransition.setOnClickListener(this);
 
         dbHelper = new DBHelper(this);
         database = dbHelper.getReadableDatabase();
@@ -39,13 +43,14 @@ public class adminActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void UpdateTable(){
-        Cursor cursor = database.query(DBHelper.TABLE_USERS, null, null, null, null, null,null);
+        Cursor cursor = database.query(DBHelper.TABLE_ANNOUNCEMENTS, null, null, null, null, null,null);
 
+        TableLayout dbOutput = findViewById(R.id.dbOutput);
         if(cursor.moveToFirst()){
-            int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID1);
-            int loginIndex = cursor.getColumnIndex(DBHelper.KEY_LOGIN);
-            int passwordIndex = cursor.getColumnIndex(DBHelper.KEY_PASSWORD);
-            TableLayout dbOutput = findViewById(R.id.dbOutput);
+            int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID2);
+            int titleIndex = cursor.getColumnIndex(DBHelper.KEY_TITLE);
+            int categoryIndex = cursor.getColumnIndex(DBHelper.KEY_CATEGORYID);
+            int usNameIndex = cursor.getColumnIndex(DBHelper.KEY_USERNAME);
             dbOutput.removeAllViews();
             do{
                 TableRow dbOutputRow = new TableRow(this);
@@ -58,17 +63,23 @@ public class adminActivity extends AppCompatActivity implements View.OnClickList
                 outputID.setText(cursor.getString(idIndex));
                 dbOutputRow.addView(outputID);
 
-                TextView outputLogin = new TextView(this);
+                TextView outputTitle = new TextView(this);
                 params.weight = 3.0f;
-                outputLogin.setLayoutParams(params);
-                outputLogin.setText(cursor.getString(loginIndex));
-                dbOutputRow.addView(outputLogin);
+                outputTitle.setLayoutParams(params);
+                outputTitle.setText(cursor.getString(titleIndex));
+                dbOutputRow.addView(outputTitle);
 
-                TextView outputPassword = new TextView(this);
+                TextView outputCategory = new TextView(this);
                 params.weight = 3.0f;
-                outputPassword.setLayoutParams(params);
-                outputPassword.setText(cursor.getString(passwordIndex));
-                dbOutputRow.addView(outputPassword);
+                outputCategory.setLayoutParams(params);
+                outputCategory.setText(MainActivity.ctg[cursor.getInt(categoryIndex)]);
+                dbOutputRow.addView(outputCategory);
+
+                TextView outputUserName = new TextView(this);
+                params.weight = 3.0f;
+                outputUserName.setLayoutParams(params);
+                outputUserName.setText(cursor.getString(usNameIndex));
+                dbOutputRow.addView(outputUserName);
 
                 Button deleteBtn = new Button(this);
                 deleteBtn.setOnClickListener(this);
@@ -81,47 +92,31 @@ public class adminActivity extends AppCompatActivity implements View.OnClickList
                 dbOutput.addView(dbOutputRow);
             }while(cursor.moveToNext());
         }
+        else{
+            dbOutput.removeAllViews();
+        }
         cursor.close();
     }
 
     @Override
     public void onClick(View v){
         switch(v.getId()){
-            case (R.id.btnRefresh):
-                UpdateTable();
-                break;
-            case (R.id.btnBack):
+            case (R.id.btnToMain):
                 startActivity(new Intent(this, MainActivity.class));
                 break;
+            case (R.id.Transition):
+                startActivity(new Intent(this, adminActivity2.class));
+                break;
             default:
-                View outputDBRow = (View) v.getParent();
-                ViewGroup outputDB = (ViewGroup) outputDBRow.getParent();
-                outputDB.removeView(outputDBRow);
-                outputDB.invalidate();
-
-                database.delete(DBHelper.TABLE_USERS, DBHelper.KEY_ID1 + " = ?", new String[]{String.valueOf(v.getId())});
-
-                ContentValues contentValues = new ContentValues();
-                Cursor cursorUpdater = database.query(DBHelper.TABLE_USERS, null, null, null, null, null, null);
-                if (cursorUpdater.moveToFirst()) {
-                    int idIndex = cursorUpdater.getColumnIndex(DBHelper.KEY_ID1);
-                    int loginIndex = cursorUpdater.getColumnIndex(DBHelper.KEY_LOGIN);
-                    int passwordIndex = cursorUpdater.getColumnIndex(DBHelper.KEY_PASSWORD);
-                    int realID = 1;
-                    do{
-                        if(cursorUpdater.getInt(idIndex) > idIndex){
-                            contentValues.put(DBHelper.KEY_ID1, realID);
-                            contentValues.put(DBHelper.KEY_LOGIN, cursorUpdater.getString(loginIndex));
-                            contentValues.put(DBHelper.KEY_PASSWORD, cursorUpdater.getString(passwordIndex));
-                            database.replace(DBHelper.TABLE_USERS, null, contentValues);
-                        }
-                        realID++;
-                    } while(cursorUpdater.moveToNext());
-                    if(cursorUpdater.moveToLast() && (cursorUpdater.getInt(idIndex) == realID)){
-                        database.delete(DBHelper.TABLE_USERS, DBHelper.KEY_ID1 + " = ?", new String[]{cursorUpdater.getString(idIndex)});
-                    }
-                    UpdateTable();
+                View outputDataBaseRow = (View) v.getParent();
+                ViewGroup outputDataBase = (ViewGroup) outputDataBaseRow.getParent();
+                int index = outputDataBase.indexOfChild(outputDataBaseRow);
+                Cursor cursor2 = database.query(DBHelper.TABLE_ANNOUNCEMENTS, null, null, null, null, null, null);
+                if (cursor2 != null) {
+                    cursor2.moveToPosition(index);
+                    database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + "=" + cursor2.getInt(0), null);
                 }
+                UpdateTable();
                 break;
         }
     }

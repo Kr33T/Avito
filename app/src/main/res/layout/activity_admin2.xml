@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".adminActivity2">
+
+    <EditText
+        android:id="@+id/etNewLogin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Логин"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/etNewName"
+        app:layout_constraintEnd_toStartOf="@id/etNewPassword"
+        />
+
+    <EditText
+        android:id="@+id/etNewPassword"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Пароль"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/etNewLogin"
+        app:layout_constraintBottom_toTopOf="@id/etNewName"
+        />
+
+    <EditText
+        android:id="@+id/etNewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAddNewUser"
+        app:layout_constraintTop_toBottomOf="@id/etNewLogin"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textAllCaps="false"
+        android:textSize="21dp"
+        android:textColor="@color/white"
+        android:id="@+id/btnAddNewUser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Добавить пользователя"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNewName"
+        app:layout_constraintBottom_toTopOf="@id/btnChangeUser"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="21dp"
+        android:textColor="@color/white"
+        android:id="@+id/btnChangeUser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Изменить данные пользователя"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddNewUser"
+        app:layout_constraintBottom_toTopOf="@id/btnDeleteUser"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="21dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:id="@+id/btnDeleteUser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Удалить пользователя"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnChangeUser"
+        app:layout_constraintBottom_toTopOf="@id/UsersOutput"/>
+
+    <TableLayout
+        android:id="@+id/UsersOutput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Transition2"
+        app:layout_constraintTop_toBottomOf="@id/btnDeleteUser">
+
+    </TableLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="21dp"
+        android:textColor="@color/white"
+        android:id="@+id/Transition2"
+        android:layout_width="0dp"
+        android:textAllCaps="false"
+        android:layout_height="50dp"
+        android:text="Объявления"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnToMain2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/UsersOutput"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="21dp"
+        android:textColor="@color/white"
+        android:id="@+id/btnToMain2"
+        android:textAllCaps="false"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="На главную"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/Transition2"
+        app:layout_constraintTop_toBottomOf="@id/UsersOutput"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Avito">
         <activity
+            android:name=".adminActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
+            android:name=".Registration"
+            android:exported="false" />
+        <activity
             android:name=".DBHelper"
             android:exported="false" />
         <activity

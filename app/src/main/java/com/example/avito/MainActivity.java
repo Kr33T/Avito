@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText etUsername, etPassword, etName;
+    EditText etUsername, etPassword;
     Button btnLogin, btnSignup;
 
     DBHelper dbHelper;
@@ -24,13 +24,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static int UserId;
     public static String[] ctg;
+    public static String[] tables;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        getSupportActionBar().hide();
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
@@ -39,41 +40,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSignup.setOnClickListener(this);
 
         etUsername = findViewById(R.id.etUsername);
-        etUsername.setOnFocusChangeListener(this::onFocusChanged);
         etPassword = findViewById(R.id.etPassword);
-        etPassword.setOnFocusChangeListener(this::onFocusChanged);
-        etName = findViewById(R.id.etName);
-        etName.setOnClickListener(this);
 
         dbHelper = new DBHelper(this);
         database = dbHelper.getReadableDatabase();
 
         contentValues = new ContentValues();
+        tables = new String[] {"Объявления", "Пользователи"};
         ctg = new String[] {"Недвижимость", "Автомобили", "Спорт", "Хобби"};
         for (int i = 0; i < ctg.length; i++){
             contentValues.put(DBHelper.KEY_CATEGORY, ctg[i]);
             database.insert(DBHelper.TABLE_CATEGORIES, null, contentValues);
-        }
-    }
-
-    public void onFocusChanged(View view, boolean b){
-        switch(view.getId()){
-            case R.id.etUsername:
-                if(b){
-                    etUsername.setHint("");
-                }
-                else{
-                    etUsername.setHint("Username");
-                }
-                break;
-            case R.id.etPassword:
-                if(b){
-                    etPassword.setHint("");
-                }
-                else{
-                    etPassword.setHint("Password");
-                }
-                break;
         }
     }
 
@@ -111,43 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.btnSignup:
-                Cursor signupCursor = database.query(DBHelper.TABLE_USERS, null, null, null, null, null, null);
-
-                boolean founded = false;
-                if(etUsername.getText().toString().equals("admin")){
-                    Toast.makeText(this, "Вы не можете использовать логин \"admin\"", Toast.LENGTH_LONG).show();
-                    founded = true;
-                }
-                else{
-                    if(etUsername.getText().toString().isEmpty() || etPassword.getText().toString().isEmpty()) {
-                        Toast.makeText(this, "Вы не ввели данные, поля пустые!", Toast.LENGTH_LONG).show();
-                        founded = true;
-                    }
-                    else{
-                        if (signupCursor.moveToNext()) {
-                            int usernameIndex = signupCursor.getColumnIndex(DBHelper.KEY_LOGIN);
-                            do {
-                                if (etUsername.getText().toString().equals(signupCursor.getString(usernameIndex))) {
-                                    Toast.makeText(this, "Пользователь с таким логином уже зарегистрирован!", Toast.LENGTH_LONG).show();
-                                    founded = true;
-                                    break;
-                                }
-                            } while (signupCursor.moveToNext());
-                        }
-                    }
-                }
-                signupCursor.close();
-                if(!founded){
-                    ContentValues contentValues = new ContentValues();
-
-                    contentValues.put(DBHelper.KEY_LOGIN, etUsername.getText().toString());
-                    contentValues.put(DBHelper.KEY_PASSWORD, etPassword.getText().toString());
-                    contentValues.put(DBHelper.KEY_NAME, etName.getText().toString());
-
-                    database.insert(DBHelper.TABLE_USERS, null, contentValues);
-
-                    Toast.makeText(this, "Вы успешно зарегистрировались!", Toast.LENGTH_LONG).show();
-                }
+                startActivity(new Intent(this, Registration.class));
                 break;
         }
     }

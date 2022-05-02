@@ -36,6 +36,8 @@ public class MyAnnouncement extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_announcement);
 
+        getSupportActionBar().hide();
+
         etTitle = findViewById(R.id.etTitle);
         etPrice = findViewById(R.id.etPrice);
         sCategory = findViewById(R.id.sCategory);
@@ -122,7 +124,18 @@ public class MyAnnouncement extends AppCompatActivity implements View.OnClickLis
                 UpdateTable();
                 break;
             default:
-                View outputDBRow = (View) v.getParent();
+
+                View outputDataBaseRow = (View) v.getParent();
+                ViewGroup outputDataBase = (ViewGroup) outputDataBaseRow.getParent();
+                int index = outputDataBase.indexOfChild(outputDataBaseRow);
+                Cursor cursor2 = database.query(DBHelper.TABLE_ANNOUNCEMENTS, null, null, null, null, null, null);
+                if (cursor2 != null) {
+                    cursor2.moveToPosition(index);
+                    database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + "=" + cursor2.getInt(0), null);
+                }
+                UpdateTable();
+
+                /*View outputDBRow = (View) v.getParent();
                 ViewGroup outputDB = (ViewGroup) outputDBRow.getParent();
                 outputDB.removeView(outputDBRow);
                 outputDB.invalidate();
@@ -149,7 +162,7 @@ public class MyAnnouncement extends AppCompatActivity implements View.OnClickLis
                         database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + " = ?", new String[]{cursorUpdater.getString(idIndex)});
                     }
                     UpdateTable();
-                }
+                }*/
                 break;
         }
     }

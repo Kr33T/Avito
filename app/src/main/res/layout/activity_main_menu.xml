@@ -6,27 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".mainMenu">
 
-    <Button
-        android:id="@+id/myAnnounce"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="Мои объявления"
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_height="120dp"
+        android:layout_width="345dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <Button
-        android:id="@+id/bulletinBoard"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Доска объявлений"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/myAnnounce"
+        app:srcCompat="@drawable/img"
         />
 
     <TextView
@@ -34,7 +22,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20dp"
         tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="122dp" />
+        tools:layout_editor_absoluteY="122dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@id/Image"
+        app:layout_constraintTop_toBottomOf="@id/Image"
+        app:layout_constraintEnd_toEndOf="@id/Image"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="21dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:id="@+id/myAnnounce"
+        android:layout_height="50dp"
+        android:layout_width="377dp"
+        android:layout_marginTop="230dp"
+        android:text="Мои объявления"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="21dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:id="@+id/bulletinBoard"
+        android:layout_height="50dp"
+        android:layout_width="377dp"
+        android:text="Доска объявлений"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myAnnounce"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="21dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:id="@+id/Profile"
+        android:layout_height="50dp"
+        android:layout_width="377dp"
+        android:text="Профиль"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bulletinBoard"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

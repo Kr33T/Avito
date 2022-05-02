@@ -6,42 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".MyAnnouncement">
 
+    <TextView
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Мои объявления"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/etTitle"
+        />
+
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Title"
+        android:hint="Название"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toStartOf="@id/etPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/Header" />
 
     <EditText
         android:id="@+id/etPrice"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Price"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
+        android:inputType="number"
+        android:hint="Цена"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/etTitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/Header" />
 
     <Spinner
         android:id="@+id/sCategory"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:ems="10"
+        android:layout_marginBottom="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etTitle"
         app:layout_constraintBottom_toTopOf="@id/btnAdd"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="21dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -49,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sCategory"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="Add" />
+        android:text="Добавить объявление" />
 
     <TableLayout
         android:id="@+id/tlAnnouncements"

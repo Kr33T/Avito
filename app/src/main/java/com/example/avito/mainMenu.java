@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class mainMenu extends AppCompatActivity implements View.OnClickListener{
 
-    Button myAnnounce, bulletinBoard;
+    Button myAnnounce, bulletinBoard, Profile;
     TextView tv;
 
     DBHelper dbHelper;
@@ -27,11 +27,16 @@ public class mainMenu extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        getSupportActionBar().hide();
+
         myAnnounce = findViewById(R.id.myAnnounce);
         myAnnounce.setOnClickListener(this);
 
         bulletinBoard = findViewById(R.id.bulletinBoard);
         bulletinBoard.setOnClickListener(this);
+
+        Profile = findViewById(R.id.Profile);
+        Profile.setOnClickListener(this);
 
         dbHelper = new DBHelper(this);
         database = dbHelper.getWritableDatabase();
@@ -50,7 +55,7 @@ public class mainMenu extends AppCompatActivity implements View.OnClickListener{
         }
 
         tv = findViewById(R.id.textView);
-        tv.setText(String.valueOf("ID аккаунта: " + MainActivity.UserId + "\nЗдравствуйте, " + userName));
+        tv.setText(String.valueOf("Здравствуйте, " + userName + "!"));
     }
 
     @Override
@@ -61,6 +66,9 @@ public class mainMenu extends AppCompatActivity implements View.OnClickListener{
                 break;
             case(R.id.bulletinBoard):
                 startActivity(new Intent(this, BulletinBoard.class));
+                break;
+            case(R.id.Profile):
+                startActivity(new Intent(this, profile.class));
                 break;
         }
     }
