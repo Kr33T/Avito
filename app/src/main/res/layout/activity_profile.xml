@@ -19,6 +19,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/textview_style"
         android:id="@+id/etUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -31,6 +34,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tvHead" />
 
     <EditText
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/textview_style"
         android:id="@+id/etPassWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -47,7 +53,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="13dp"
-        android:textSize="21dp"
+        android:textSize="15dp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:id="@+id/btnChange"

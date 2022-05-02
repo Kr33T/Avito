@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:theme="@android:style/Theme.Black.NoTitleBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registration">
@@ -20,9 +19,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:background="@drawable/textview_style"
         android:id="@+id/etName"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="@string/strName"
         android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@id/tvEnter"
@@ -31,9 +31,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:background="@drawable/textview_style"
         android:id="@+id/etUsername"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="@string/strLogin"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,9 +43,10 @@
         />
 
     <EditText
+        android:background="@drawable/textview_style"
         android:id="@+id/etPassword"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="@string/strPassword"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +59,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:textSize="21dp"
+        android:textSize="15dp"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:id="@+id/btnSignup2"
         android:layout_width="377dp"

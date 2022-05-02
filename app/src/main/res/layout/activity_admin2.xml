@@ -7,6 +7,11 @@
     tools:context=".adminActivity2">
 
     <EditText
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/textview_style"
         android:id="@+id/etNewLogin"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -18,6 +23,11 @@
         />
 
     <EditText
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/textview_style"
         android:id="@+id/etNewPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -29,9 +39,14 @@
         />
 
     <EditText
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/textview_style"
         android:id="@+id/etNewName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="@string/strName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +61,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:textAllCaps="false"
-        android:textSize="21dp"
+        android:textSize="15dp"
         android:textColor="@color/white"
         android:id="@+id/btnAddNewUser"
         android:layout_width="match_parent"
@@ -64,7 +79,7 @@
         android:textAllCaps="false"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:textSize="21dp"
+        android:textSize="15dp"
         android:textColor="@color/white"
         android:id="@+id/btnChangeUser"
         android:layout_width="match_parent"
@@ -81,7 +96,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:textSize="21dp"
+        android:textSize="15dp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:id="@+id/btnDeleteUser"
@@ -109,7 +124,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
-        android:textSize="21dp"
+        android:textSize="15dp"
         android:textColor="@color/white"
         android:id="@+id/Transition2"
         android:layout_width="0dp"
@@ -127,7 +142,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="21dp"
+        android:textSize="15dp"
         android:textColor="@color/white"
         android:id="@+id/btnToMain2"
         android:textAllCaps="false"
