@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class Registration extends AppCompatActivity implements View.OnClickListener{
 
+    //ready
+
     EditText etUsername, etPassword, etName;
     Button btnSignup;
 

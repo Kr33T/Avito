@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Registration">
 
+    <!--Ready-->
+
     <TextView
         android:id="@+id/tvEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/strRegister"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +30,9 @@
         app:layout_constraintTop_toBottomOf="@id/tvEnter"
         app:layout_constraintBottom_toTopOf="@id/etUsername"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <EditText
         android:background="@drawable/textview_style"
@@ -40,7 +44,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etName"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <EditText
         android:background="@drawable/textview_style"
@@ -52,14 +57,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:inputType="textPassword"
+        android:importantForAutofill="no" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:id="@+id/btnSignup2"

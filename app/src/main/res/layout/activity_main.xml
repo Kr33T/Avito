@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--Ready-->
+
     <TextView
         android:id="@+id/tvEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/strVhod"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +30,9 @@
         app:layout_constraintTop_toBottomOf="@id/tvEnter"
         app:layout_constraintBottom_toTopOf="@id/etPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <EditText
         android:background="@drawable/textview_style"
@@ -40,13 +44,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        tools:ignore="Autofill,TextFields"
+        android:inputType="textPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
-        android:layout_marginLeft="10dp"
-        android:textSize="15dp"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:id="@+id/btnLogin"
         android:layout_width="180dp"
         android:layout_height="50dp"
@@ -63,8 +69,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:id="@+id/btnSignup"
         android:layout_width="180dp"
         android:layout_height="50dp"

@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MyAnnouncement">
 
+    <!--Ready-->
+
     <TextView
         android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/strMyAnnouncements"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,44 +22,49 @@
         />
 
     <EditText
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/textview_style"
         android:id="@+id/etTitle"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="13dp"
+        android:background="@drawable/textview_style"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/strNazvanie"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toStartOf="@id/etPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Header" />
+        app:layout_constraintTop_toBottomOf="@id/Header"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <EditText
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/textview_style"
         android:id="@+id/etPrice"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:ems="10"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="13dp"
-        android:inputType="number"
+        android:background="@drawable/textview_style"
+        android:ems="10"
         android:hint="@string/strPrice"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@id/sCategory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/etTitle"
-        app:layout_constraintTop_toBottomOf="@id/Header" />
+        app:layout_constraintTop_toBottomOf="@id/Header"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <Spinner
         android:id="@+id/sCategory"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:ems="10"
+        android:contentDescription="@string/description"
         android:layout_marginBottom="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,21 +73,22 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/button_style"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:textSize="15dp"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sCategory"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_style"
+        android:text="@string/strAddAnnouncement"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@id/tlAnnouncements"
-        android:text="@string/strAddAnnouncement" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sCategory"
+        tools:ignore="TextContrastCheck" />
 
     <TableLayout
         android:id="@+id/tlAnnouncements"

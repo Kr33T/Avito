@@ -1,25 +1,25 @@
 package com.example.avito;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MyAnnouncement extends AppCompatActivity implements View.OnClickListener{
+
+    //ready
 
     EditText etTitle, etPrice;
     Spinner sCategory;
@@ -134,35 +134,6 @@ public class MyAnnouncement extends AppCompatActivity implements View.OnClickLis
                     database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + "=" + cursor2.getInt(0), null);
                 }
                 UpdateTable();
-
-                /*View outputDBRow = (View) v.getParent();
-                ViewGroup outputDB = (ViewGroup) outputDBRow.getParent();
-                outputDB.removeView(outputDBRow);
-                outputDB.invalidate();
-
-                database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + " = ?", new String[]{String.valueOf(v.getId())});
-
-                contentValues = new ContentValues();
-                Cursor cursorUpdater = database.query(DBHelper.TABLE_ANNOUNCEMENTS, null, null, null, null, null, null);
-                if (cursorUpdater.moveToFirst()) {
-                    int idIndex = cursorUpdater.getColumnIndex(DBHelper.KEY_ID2);
-                    int titleIndex = cursorUpdater.getColumnIndex(DBHelper.KEY_TITLE);
-                    int priceIndex = cursorUpdater.getColumnIndex(DBHelper.KEY_PRICE);
-                    int realID = 1;
-                    do{
-                        if(cursorUpdater.getInt(idIndex) > idIndex){
-                            contentValues.put(DBHelper.KEY_ID2, realID);
-                            contentValues.put(DBHelper.KEY_TITLE, cursorUpdater.getString(titleIndex));
-                            contentValues.put(DBHelper.KEY_PRICE, cursorUpdater.getString(priceIndex));
-                            database.replace(DBHelper.TABLE_ANNOUNCEMENTS, null, contentValues);
-                        }
-                        realID++;
-                    } while(cursorUpdater.moveToNext());
-                    if(cursorUpdater.moveToLast() && (cursorUpdater.getInt(idIndex) == realID)){
-                        database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + " = ?", new String[]{cursorUpdater.getString(idIndex)});
-                    }
-                    UpdateTable();
-                }*/
                 break;
         }
     }

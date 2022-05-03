@@ -2,6 +2,7 @@ package com.example.avito;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class adminActivity2 extends AppCompatActivity implements View.OnClickListener {
+
+    //ready
 
     Button btnAddNewUser, btnChangeUser, Transition2, btnDeleteUser, btnToMain2;
 
@@ -95,6 +98,7 @@ public class adminActivity2 extends AppCompatActivity implements View.OnClickLis
                     else{
                         Toast.makeText(this, "Такой пользователь уже зарегистрирован!", Toast.LENGTH_SHORT).show();
                     }
+                    cursor.close();
                 }
                 else{
                     Toast.makeText(this, "Поля не заполнены!", Toast.LENGTH_SHORT).show();
@@ -153,6 +157,7 @@ public class adminActivity2 extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void UpdateTable(){
         Cursor cursor = database.query(DBHelper.TABLE_USERS, null, null, null, null, null,null);
 

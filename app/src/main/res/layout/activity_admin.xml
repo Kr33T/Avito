@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".adminActivity">
 
+    <!--Ready-->
+
     <TableLayout
         android:id="@+id/dbOutput"
         android:layout_width="0dp"
@@ -22,11 +24,11 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
 
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:background="@drawable/button_style"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:text="@string/strUsers"
@@ -39,10 +41,10 @@
         android:id="@+id/btnToMain"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:textSize="15dp"
+        android:layout_marginStart="5dp"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:background="@drawable/button_style"

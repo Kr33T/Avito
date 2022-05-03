@@ -1,8 +1,6 @@
 package com.example.avito;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ContentValues;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,9 +13,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.util.Arrays;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class adminActivity extends AppCompatActivity implements View.OnClickListener {
+
+    //ready
 
     Button btnToMain, btnTransition;
 
@@ -111,7 +111,7 @@ public class adminActivity extends AppCompatActivity implements View.OnClickList
                 View outputDataBaseRow = (View) v.getParent();
                 ViewGroup outputDataBase = (ViewGroup) outputDataBaseRow.getParent();
                 int index = outputDataBase.indexOfChild(outputDataBaseRow);
-                Cursor cursor2 = database.query(DBHelper.TABLE_ANNOUNCEMENTS, null, null, null, null, null, null);
+                @SuppressLint("Recycle") Cursor cursor2 = database.query(DBHelper.TABLE_ANNOUNCEMENTS, null, null, null, null, null, null);
                 if (cursor2 != null) {
                     cursor2.moveToPosition(index);
                     database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + "=" + cursor2.getInt(0), null);

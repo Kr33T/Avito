@@ -24,4 +24,7 @@
     <string name="strChangingUserData">Изменение данных входа</string>
     <string name="strBtnChangeUserData">Изменить данные</string>
     <string name="strBtnRegister">Зарегистрироваться</string>
+    <string name="description">Категория</string>
+    <string name="strBoard">Доска объявлений</string>
+    <string name="strAvito">Avito</string>
 </resources>

@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".adminActivity2">
 
+    <!--Ready-->
+
     <EditText
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/textview_style"
         android:id="@+id/etNewLogin"
@@ -20,39 +22,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/etNewName"
         app:layout_constraintEnd_toStartOf="@id/etNewPassword"
-        />
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <EditText
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/textview_style"
         android:id="@+id/etNewPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:inputType="text"
         android:hint="@string/strPassword"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/etNewLogin"
         app:layout_constraintBottom_toTopOf="@id/etNewName"
-        />
+        android:importantForAutofill="no"
+        tools:ignore="TextFields" />
 
     <EditText
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/textview_style"
         android:id="@+id/etNewName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:inputType="text"
         android:hint="@string/strName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btnAddNewUser"
         app:layout_constraintTop_toBottomOf="@id/etNewLogin"
-        />
+        android:importantForAutofill="no" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
@@ -61,7 +67,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:textAllCaps="false"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
         android:id="@+id/btnAddNewUser"
         android:layout_width="match_parent"
@@ -79,7 +85,7 @@
         android:textAllCaps="false"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
         android:id="@+id/btnChangeUser"
         android:layout_width="match_parent"
@@ -96,7 +102,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:id="@+id/btnDeleteUser"
@@ -121,10 +127,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
         android:id="@+id/Transition2"
         android:layout_width="0dp"
@@ -139,10 +145,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="@color/white"
         android:id="@+id/btnToMain2"
         android:textAllCaps="false"

@@ -5,15 +5,17 @@
       <map>
         <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/drawable/button_style.xml" value="0.252" />
         <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/drawable/textview_style.xml" value="0.252" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_admin.xml" value="0.27445652173913043" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_admin2.xml" value="0.27445652173913043" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_bulletin_board.xml" value="0.22" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_admin.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_admin2.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_bulletin_board.xml" value="0.33" />
         <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_dbhelper.xml" value="0.27445652173913043" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_main.xml" value="0.27445652173913043" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_main_menu.xml" value="0.22" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_my_announcement.xml" value="0.27445652173913043" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_registration.xml" value="0.27445652173913043" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_main_menu.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_my_announcement.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/layout/activity_registration.xml" value="0.33" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.252" />
+        <entry key="..\:/Users/am321/AndroidStudioProjects/Avito/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.252" />
       </map>
     </option>
   </component>

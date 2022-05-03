@@ -2,6 +2,7 @@ package com.example.avito;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    //ready
+
     EditText etUsername, etPassword;
     Button btnLogin, btnSignup;
 
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static int UserId;
     public static String[] ctg;
-    public static String[] tables;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         getSupportActionBar().hide();
 
-        btnLogin = (Button) findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
 
-        btnSignup = (Button) findViewById(R.id.btnSignup);
+        btnSignup = findViewById(R.id.btnSignup);
         btnSignup.setOnClickListener(this);
 
         etUsername = findViewById(R.id.etUsername);
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         database = dbHelper.getReadableDatabase();
 
         contentValues = new ContentValues();
-        tables = new String[] {"Объявления", "Пользователи"};
+
         ctg = new String[] {"Недвижимость", "Автомобили", "Спорт", "Хобби"};
         for (int i = 0; i < ctg.length; i++){
             contentValues.put(DBHelper.KEY_CATEGORY, ctg[i]);
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v){
         switch(v.getId()){

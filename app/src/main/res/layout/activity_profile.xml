@@ -6,21 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".profile">
 
+    <!--Ready-->
+
     <TextView
         android:id="@+id/tvHead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/strChangingUserData"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/textview_style"
         android:id="@+id/etUserName"
         android:layout_width="0dp"
@@ -31,11 +33,13 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/etPassWord"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHead" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHead"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <EditText
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/textview_style"
         android:id="@+id/etPassWord"
         android:layout_width="0dp"
@@ -46,14 +50,17 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/etUserName"
-        app:layout_constraintTop_toBottomOf="@+id/tvHead" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHead"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        tools:ignore="TextFields" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_style"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="13dp"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:id="@+id/btnChange"

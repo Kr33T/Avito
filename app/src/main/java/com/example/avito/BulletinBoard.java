@@ -1,19 +1,13 @@
 package com.example.avito;
 
-import static java.lang.String.valueOf;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ContentValues;
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
@@ -21,9 +15,13 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Arrays;
 
 public class BulletinBoard extends AppCompatActivity implements View.OnClickListener{
+
+    //ready
 
     TextView tvTitle, tvPrice;
     Spinner sCategory;
@@ -31,7 +29,6 @@ public class BulletinBoard extends AppCompatActivity implements View.OnClickList
 
     ArrayAdapter<String> adapter;
 
-    Cursor cursor;
     int totalItems = 0;
     int totalCost = 0;
 
@@ -39,8 +36,8 @@ public class BulletinBoard extends AppCompatActivity implements View.OnClickList
 
     DBHelper dbHelper;
     SQLiteDatabase database;
-    ContentValues contentValues;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,6 +136,7 @@ public class BulletinBoard extends AppCompatActivity implements View.OnClickList
         cursor.close();
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v){
         switch(v.getId()){
@@ -150,8 +148,6 @@ public class BulletinBoard extends AppCompatActivity implements View.OnClickList
 
                 for(int i = 0; i < basket.length; i++){
                     database.delete(DBHelper.TABLE_ANNOUNCEMENTS, DBHelper.KEY_ID2 + "=" + basket[i], null);
-                    //Toast.makeText(this, "" + basket[i], Toast.LENGTH_LONG).show();
-
                 }
 
                 basket = Arrays.copyOf(basket, 0);
@@ -235,8 +231,6 @@ public class BulletinBoard extends AppCompatActivity implements View.OnClickList
                     cursor2.moveToPosition(index);
                     basket[basket.length - 1] = cursor2.getInt(0);
                     totalCost += cursor2.getInt(2);
-                    //Toast.makeText(this, "" + cursor2.getString(0), Toast.LENGTH_LONG).show();
-
                 }
                 tvPrice.setText("Стоимость: " + totalCost);
                 totalItems++;
